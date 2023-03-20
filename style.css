@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(3, 107, 3);
+    color: white;
+    margin-left: 3rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+#wrapContainer {
+    outline: 2px solid yellow;
+    max-width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+#DucksContainer {
+    outline: 2px solid red;
+    text-align: center;
+    color: black;
+    background-color: rgb(195, 195, 195);
+    border-radius: 20px;
+    margin-top: 5rem;
+    width: 30vw;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+#formContainer {
+    outline: 2px solid red;
+    text-align: center;
+    background-color: rgb(42, 42, 42);
+    border-radius: 20px;
+    margin-top: 5rem;
+    width: 30vw;
+    text-align:left;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+input {
+    margin-top: 2rem;
+    margin-left: 7rem;
+    max-width: 40%;
+}
+
+button {
+    border-radius: 20px;
+    background-color: rgb(3, 107, 3);
+    margin-top: 3.5rem;
+    margin-left: 8.5rem;
+    width: 30%;
+    height: 10%;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 5px rgb(210, 102, 0);
+    transition: 0.5s;
+    border: none;
+    cursor: pointer;
+}
