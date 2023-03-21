@@ -14,31 +14,39 @@
 <div id="wrapContainer">
     <div id="DucksContainer">
         <?php foreach ($ducks as $duck) : ?><br>
-                <p><?= $duck['id'] ?></p>
+                <p><?= $duck['ID'] ?></p>
                 <p>Price: <?= $duck['Price'] ?></p>
                 <p>Rarity: <?= $duck['Rarity'] ?></p>
                 <p>Color: <?= $duck['Color'] ?></p>
                 <p>Theme: <?= $duck['Theme'] ?></p>
                 <p>Manufacturer: <?= $duck['Manufacturer'] ?><br><br></p>
-                <hr>
+        <?php if($duck !== end($ducks)){echo '<hr>';}; ?>
         <?php endforeach; ?>
     </div>
     <div id="formContainer">
-        <label for="price">Price: </label>
-        <input type="text" id="price" name="price"><br>
-
-        <label for="rarity">Rarity: </label>
-        <input type="text" id="rarity" name="rarity"><br>
-
-        <label for="color">Color: </label>
-        <input type="text" id="color" name="color"><br>
-
-        <label for="theme">Theme: </label>
-        <input type="text" id="theme" name="theme"><br>
-
-        <label for="manufacturer">Manufacturer: </label>
-        <input type="text" id="manufacturer" name="manufacturer"><br>
-        <button type="submit" name="submit">SUBMIT</button>
+        <form action="index.php" method="GET">
+            <div class='input'>
+                <label for="price">Price: </label><br>
+                <input type="text" id="price" name="price" required><br>
+            </div>
+            <div class='input'>    
+                <label for="rarity">Rarity: </label><br>
+                <input type="text" id="rarity" name="rarity" required><br>
+            </div>
+            <div class='input'>
+                <label for="color">Color: </label><br>
+                <input type="text" id="color" name="color" required><br>
+            </div>
+            <div class='input'>
+                <label for="theme">Theme: </label><br>
+                <input type="text" id="theme" name="theme" required><br>
+            </div>
+            <div class='input'>
+                <label for="manufacturer">Manufacturer: </label><br>
+                <input type="text" id="manufacturer" name="manufacturer" required><br>
+            </div>
+            <button type="submit" name="action" value="create">SUBMIT</button>
+        </form>
     </div>
 </div>
 </body>
