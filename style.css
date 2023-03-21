@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(3, 107, 3);
+    background-color: rgb(3, 32, 107);
     color: white;
     margin-left: 3rem;
 }
@@ -15,21 +15,23 @@ h1 {
 }
 
 #wrapContainer {
-    outline: 2px solid yellow;
     max-width: 80vw;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
+    max-height: 75%;
 }
 
 #DucksContainer {
-    outline: 2px solid red;
+    border: 5px solid black;
     text-align: center;
     color: black;
     background-color: rgb(195, 195, 195);
     border-radius: 20px;
     margin-top: 5rem;
     width: 30vw;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 hr {
@@ -37,35 +39,67 @@ hr {
 }
 
 #formContainer {
-    outline: 2px solid red;
-    text-align: center;
+    border: 5px solid white;
     background-color: rgb(42, 42, 42);
     border-radius: 20px;
     margin-top: 5rem;
     width: 30vw;
     text-align:left;
     padding-left: 2rem;
-    padding-top: 2rem;
+    padding-top: 5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: auto;
 }
 
 input {
-    margin-top: 2rem;
-    margin-left: 7rem;
     max-width: 40%;
+}
+
+.input {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 75%;
 }
 
 button {
     border-radius: 20px;
-    background-color: rgb(3, 107, 3);
-    margin-top: 3.5rem;
-    margin-left: 8.5rem;
+    background-color: rgb(142, 5, 215);
+    margin: auto;
+    margin-top: 3rem;
     width: 30%;
-    height: 10%;
+    font-size: 2rem;
+    border: 2px solid white;
+    color: white;
 }
 
 button:hover {
-    box-shadow: 0px 0px 10px 5px rgb(210, 102, 0);
+    box-shadow: 0px 0px 10px 5px rgb(255, 0, 230);
     transition: 0.5s;
     border: none;
     cursor: pointer;
 }
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
