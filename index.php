@@ -24,6 +24,9 @@ switch ($action) {
     case 'create':
         create($ducks, $duckRepository);
         break;
+    case 'delete':
+        delete($ducks, $duckRepository);
+        break;
     default:
         overview($ducks);
         break;
@@ -36,8 +39,6 @@ function overview($ducks)
 
 function create($ducks, $duckRepository)
 {
-    // TODO: provide the create logic
-
     $price = $_GET['price'];
     $rarity = $_GET['rarity'];
     $color = $_GET['color'];
@@ -46,6 +47,13 @@ function create($ducks, $duckRepository)
 
     $duckRepository->create($price, $rarity, $color, $theme, $manufacturer);
     require 'overview.php';
-    header("Location: ".$_SERVER['PHP_SELF']);
-    exit();
+    echo "<meta http-equiv=\"refresh\" content=\"0;url=index.php\">";
+}
+
+function delete($ducks, $duckRepository)
+{
+    $toDelete = $_GET['id'];
+    $duckRepository->delete($toDelete);
+    require 'overview.php';
+    echo "<meta http-equiv=\"refresh\" content=\"0;url=index.php\">";
 }
