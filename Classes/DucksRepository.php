@@ -22,8 +22,6 @@ class DucksRepository
 
         $values = array($price, $rarity, $color, $theme, $manufacturer);
         $query->execute($values);
-
-
     }
 
     // Get one
@@ -46,9 +44,10 @@ class DucksRepository
 
     }
 
-    public function delete(): void
+    public function delete($toDelete): void
     {
-
+        $query = $this->databaseManager->connection->prepare("DELETE FROM ducks WHERE ID=?;");
+        $query->execute([$toDelete]);
     }
 
 }
