@@ -13,8 +13,16 @@ class DucksRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create(): void
+    public function create($price, $rarity, $color, $theme, $manufacturer): void
     {
+        $query = $this->databaseManager->connection->prepare(
+            "INSERT INTO ducks (Price, Rarity, Color, Theme, Manufacturer) 
+            VALUES (?,?,?,?,?);"
+        );
+
+        $values = array($price, $rarity, $color, $theme, $manufacturer);
+        $query->execute($values);
+
 
     }
 
