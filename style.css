@@ -24,18 +24,35 @@ h1 {
 
 #DucksContainer {
     border: 5px solid black;
-    text-align: center;
     color: black;
     background-color: rgb(195, 195, 195);
     border-radius: 20px;
     margin-top: 5rem;
-    width: 30vw;
+    width: 40%;
+    min-height: 65vh;
     overflow: scroll;
     overflow-x: hidden;
+    outline: 2px solid green;
+}
+
+#DucksContainer p{
+    margin-left: 1rem;
 }
 
 hr {
     border: 1px solid black;
+}
+
+img {
+    width: 35px;
+    margin-top: -2rem;
+    cursor: pointer;
+    margin-left: 30rem;
+}
+
+#DucksContainer a {
+    display: inline-block;
+    width: 1px;
 }
 
 #formContainer {
@@ -43,9 +60,7 @@ hr {
     background-color: rgb(42, 42, 42);
     border-radius: 20px;
     margin-top: 5rem;
-    width: 30vw;
-    text-align:left;
-    padding-left: 2rem;
+    width: 20vw;
     padding-top: 5rem;
 }
 
@@ -55,7 +70,7 @@ form {
 }
 
 label {
-    margin: auto;
+    font-size: 1.2rem
 }
 
 input {
@@ -66,7 +81,7 @@ input {
     margin: auto;
     text-align: center;
     margin-bottom: 1.5rem;
-    width: 75%;
+    width: 90%;
 }
 
 button {
@@ -74,8 +89,8 @@ button {
     background-color: rgb(142, 5, 215);
     margin: auto;
     margin-top: 3rem;
-    width: 30%;
-    font-size: 2rem;
+    width: 35%;
+    font-size: 1.5rem;
     border: 2px solid white;
     color: white;
 }
@@ -93,11 +108,12 @@ button:hover {
   }
   
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #C3C3C3; 
   }
 
   ::-webkit-scrollbar-thumb {
     background: #888; 
+    border-radius: 20px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
