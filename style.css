@@ -32,7 +32,6 @@ h1 {
     min-height: 65vh;
     overflow: scroll;
     overflow-x: hidden;
-    outline: 2px solid green;
 }
 
 #DucksContainer p{
@@ -41,13 +40,20 @@ h1 {
 
 hr {
     border: 1px solid black;
+    margin-left: 0.4rem;
 }
 
-img {
+.deleteBtn {
     width: 35px;
     margin-top: -2rem;
     cursor: pointer;
-    margin-left: 30rem;
+    margin-left: 27vw;
+}
+
+.updateBtn {
+    width: 35px;
+    cursor: pointer;
+    margin-left: 27vw;
 }
 
 #DucksContainer a {
@@ -88,7 +94,7 @@ button {
     border-radius: 20px;
     background-color: rgb(142, 5, 215);
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 35%;
     font-size: 1.5rem;
     border: 2px solid white;
@@ -109,6 +115,9 @@ button:hover {
   
   ::-webkit-scrollbar-track {
     background: #C3C3C3; 
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    border-radius: 20px;
   }
 
   ::-webkit-scrollbar-thumb {
