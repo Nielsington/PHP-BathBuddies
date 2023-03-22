@@ -27,6 +27,12 @@ switch ($action) {
     case 'delete':
         delete($ducks, $duckRepository);
         break;
+    case 'updatePage':
+        edit($ducks, $duckRepository);
+        break;
+    // case 'updateItem':
+    //     updateItem($ducks, $duckRepository);
+    //     break;
     default:
         overview($ducks);
         break;
@@ -38,22 +44,28 @@ function overview($ducks)
 }
 
 function create($ducks, $duckRepository)
-{
-    $price = $_GET['price'];
-    $rarity = $_GET['rarity'];
-    $color = $_GET['color'];
-    $theme = $_GET['theme'];
-    $manufacturer = $_GET['manufacturer'];
-
-    $duckRepository->create($price, $rarity, $color, $theme, $manufacturer);
-    require 'overview.php';
-    echo "<meta http-equiv=\"refresh\" content=\"0;url=index.php\">";
+{   
+    if (isset($_GET['action']) && $_GET['action'] === 'create') {
+        $duckRepository->create();
+        header("Location: ./");
+        exit();
+    }
 }
 
 function delete($ducks, $duckRepository)
 {
-    $toDelete = $_GET['id'];
-    $duckRepository->delete($toDelete);
-    require 'overview.php';
-    echo "<meta http-equiv=\"refresh\" content=\"0;url=index.php\">";
+        $duckRepository->delete();
+}
+
+function edit($ducks, $duckRepository): void
+{
+    
+    if (isset($_POST['submit'])) {
+        $duckRepository->update();
+        header("Location: ./");
+        exit();
+    }
+
+    require './Edit/edit.php';
+    
 }
