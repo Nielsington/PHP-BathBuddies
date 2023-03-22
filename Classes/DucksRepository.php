@@ -13,8 +13,14 @@ class DucksRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create($price, $rarity, $color, $theme, $manufacturer): void
+    public function create(): void
     {
+        $price = $_GET['price'];
+        $rarity = $_GET['rarity'];
+        $color = $_GET['color'];
+        $theme = $_GET['theme'];
+        $manufacturer = $_GET['manufacturer'];
+
         $query = $this->databaseManager->connection->prepare(
             "INSERT INTO ducks (Price, Rarity, Color, Theme, Manufacturer) 
             VALUES (?,?,?,?,?);"
@@ -25,9 +31,16 @@ class DucksRepository
     }
 
     // Get one
-    public function find(): array
+    public function find($toFill): array
     {
+        $query = $this->databaseManager->connection->prepare(
+            "SELECT * FROM ducks WHERE id=?;"
+        );
 
+        $query->execute([$toFill]);
+        $data = $query->fetch();
+        var_dump($data);
+        return $data;
     }
 
     // Get all
@@ -41,13 +54,21 @@ class DucksRepository
 
     public function update(): void
     {
+        $price = $_POST['price'];
+        $rarity = $_POST['rarity'];
+        $color = $_POST['color'];
+        $theme = $_POST['theme'];
+        $manufacturer = $_POST['manufacturer'];
+        $toFill = $_GET['id'];
 
+        $query = $this->databaseManager->connection->prepare("UPDATE ducks SET Price=?, Rarity=?, Color=?, Theme=?, Manufacturer=? WHERE id=?;");
+        $query->execute([$price, $rarity, $color, $theme, $manufacturer, $toFill]);
     }
 
-    public function delete($toDelete): void
+    public function delete(): void
     {
+        $toDelete = $_GET['id'];
         $query = $this->databaseManager->connection->prepare("DELETE FROM ducks WHERE ID=?;");
         $query->execute([$toDelete]);
     }
-
 }
