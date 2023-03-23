@@ -30,13 +30,12 @@ switch ($action) {
     case 'updatePage':
         edit($ducks, $duckRepository);
         break;
-    // case 'updateItem':
-    //     updateItem($ducks, $duckRepository);
-    //     break;
     default:
         overview($ducks);
         break;
 }
+
+//Controllers
 
 function overview($ducks)
 {
